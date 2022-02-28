@@ -1,6 +1,6 @@
 <!-- _coverpage.md -->
 
-<!-- ![logo](_media/icon.svg) -->
+![logo](icon.svg)
 
 # HELLO <small>2.0</small>
 
