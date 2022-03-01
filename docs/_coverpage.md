@@ -2,7 +2,8 @@
 
 ![logo](icon.svg)
 
-# HELLO <small>2.0</small>
+# HELLO
+<!-- <small>2.0</small> -->
 
 > Ivan个人笔记博客
 
