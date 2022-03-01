@@ -10,6 +10,12 @@
   * [正则化](Python/正则化.md)
 
 * 手写系列_NLP
+  * [Dataset_DataLoader](手写系列_NLP/01dataset_dataloader/dataset_dataloader.md)
+  * [梯度下降](手写系列_NLP/02梯度下降/梯度下降.md)
+  * [线性回归](手写系列_NLP/03线性回归/线性回归.md)
+  * [逻辑回归](手写系列_NLP/04逻辑回归/逻辑回归.md)
+  * [BP神经网络](手写系列_NLP/05BP神经网络/BP神经网络.md)
+  * [Linear](手写系列_NLP/06Linear/Linear.md)
 
 * 深度学习
   * [Regression](深度学习/01Regression/Regression.md)
