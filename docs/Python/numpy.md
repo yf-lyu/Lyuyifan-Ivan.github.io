@@ -123,5 +123,18 @@ print(np.sort(arr, axis=0))     # 按列排序
 ## numpy数组切片、索引
 ```python
 import numpy as np
-arr = np.array([[1,-2],[3,4]])
+arr1 = np.arange(1, 6, 2)
+arr2 = np.array([[1, -2, 5],[3, 4, 2.6]])
+print(arr1[0:2])        # [1 3] 选择索引为0与1对应的值
+print(arr2[0:2, 1])     # [-2. 4.] 选择第1列中第0行、第1行的值
+print(arr2[:1])         # [[1. -2. 5.]] 选择第0行的所有值，等同于b[0:1, :1]
+# 条件索引
+print(arr1[arr1<3])
+# 花式索引
+x=np.arange(32).reshape((8,4))
+print(x[[4,2,1,7]])
+output:[[16 17 18 19]
+        [ 8  9 10 11]
+        [ 4  5  6  7]
+        [28 29 30 31]]
 ```
