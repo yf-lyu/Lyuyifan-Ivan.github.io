@@ -167,3 +167,136 @@ df = pd.DataFrame(dict)
 # 保存 dataframe
 df.to_csv('site.csv')
 ```
+
+## Pandas JSON文件
+
+JSON（JavaScript Object Notation，JavaScript 对象表示法），是存储和交换文本信息的语法，类似 XML
+
+读取json文件内容
+
+```python
+import pandas as pd
+df = pd.read_json('sites.json')
+print(df.to_string())
+```
+- to_string() 用于返回 DataFrame 类型的数据，我们也可以直接处理 JSON 字符串
+
+```python
+import pandas as pd
+data =[
+    {
+      "id": "A001",
+      "name": "菜鸟教程",
+      "url": "www.runoob.com",
+      "likes": 61
+    },
+    {
+      "id": "A002",
+      "name": "Google",
+      "url": "www.google.com",
+      "likes": 124
+    },
+    {
+      "id": "A003",
+      "name": "淘宝",
+      "url": "www.taobao.com",
+      "likes": 45
+    }
+]
+df = pd.DataFrame(data)
+print(df)
+Output:     id       name         url         likes
+        0  A001    菜鸟教程  www.runoob.com     61
+        1  A002     Google  www.google.com     124
+        2  A003      淘宝  www.taobao.com       45
+```
+
+JSON 对象与 Python 字典具有相同的格式，所以我们可以直接将 Python 字典转化为 DataFrame 数据：
+```python
+import pandas as pd
+# 字典格式的JSON
+s = {
+    "col1":{"row1":1,"row2":2,"row3":3},
+    "col2":{"row1":"x","row2":"y","row3":"z"}
+}
+# 读取 JSON 转为 DataFrame
+df = pd.DataFrame(s)
+print(df)
+Output:         col1 col2
+        row1     1    x
+        row2     2    y
+        row3     3    z
+
+```
+
+## Pandas 数据清洗
+
+数据清洗是对一些没有用的数据进行处理的过程
+
+很多数据集存在数据缺失、数据格式错误、错误数据或重复数据的情况，如果要对使数据分析更加准确，就需要对这些没有用的数据进行处理
+
+### Pandas 清洗空值
+
+如果我们要删除包含空字段的行，可以使用dropna( )方法，语法格式如下：
+
+```python
+DataFrame.dropna(axis=0, how='any', thresh=None, subset=None, inplace=False)
+# axis：默认为 0，表示逢空值剔除整行，如果设置参数 axis＝1 表示逢空值去掉整列
+# how：默认为 'any' 如果一行（或一列）里任何一个数据有出现 NA 就去掉整行，如果设置 how='all' 一行（或列）都是 NA 才去掉这整行
+# thresh：设置需要多少非空值的数据才可以保留下来的
+# subset：设置想要检查的列。如果是多个列，可以使用列名的 list 作为参数
+# inplace：如果设置 True，将计算得到的值直接覆盖之前的值并返回 None，修改的是源数据
+```
+
+我们可以通过 isnull( ) 判断各个单元格是否为空
+
+```python
+import pandas as pd
+df = pd.read_csv('property-data.csv')
+print (df['NUM_BEDROOMS'])
+print (df['NUM_BEDROOMS'].isnull())     # 对应元素不为空则True，否则填入False 空值(Nan)
+```
+
+接下来的实例演示了删除包含空数据的行
+
+```python
+# 移除 ST_NUM 列中字段值为空的行
+import pandas as pd
+df = pd.read_csv('property-data.csv')
+df.dropna(subset=['ST_NUM'], inplace = True)
+print(df.to_string())
+```
+
+我们也可以 fillna() 方法来替换一些空字段：
+
+```python
+import pandas as pd
+df = pd.read_csv('property-data.csv')
+df.fillna(12345, inplace = True)    # 使用 12345 替换空字段
+print(df.to_string())
+```
+
+### Pandas 清洗格式错误数据
+
+数据格式错误的单元格会使数据分析变得困难，甚至不可能
+
+我们可以通过包含空单元格的行，或者将列中的所有单元格转换为相同格式的数据
+
+### Pandas 清洗错误数据
+
+
+数据错误也是很常见的情况，我们可以对错误的数据进行替换或移除
+
+```python
+# 将 age 大于 120 的设置为 120
+import pandas as pd
+person = {
+  "name": ['Google', 'Runoob' , 'Taobao'],
+  "age": [50, 200, 12345]    
+}
+df = pd.DataFrame(person)
+for x in df.index:
+  if df.loc[x, "age"] > 120:
+    df.loc[x, "age"] = 120
+print(df.to_string())
+```
