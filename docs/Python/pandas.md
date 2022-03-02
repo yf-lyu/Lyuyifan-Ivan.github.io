@@ -8,9 +8,9 @@
 
 ## pandas 数据结构-Series
 
-- Pandas Series 类似表格中的一个列（column），类似于一维数组，可以保存任何数据类型
+Pandas Series 类似表格中的一个列（column），类似于一维数组，可以保存任何数据类型
 
-- Series 由索引（index）和列组成
+Series 由索引（index）和列组成
 
 ```python
 pandas.Series(data, index, dtype, name, copy)
