@@ -12,16 +12,30 @@
   <div id="app"></div>
   <script>
     window.$docsify = {
-      name: '',
+      name: 'Ivan个人笔记博客',
       repo: '',
+      auto2top: true,
       loadSidebar: true,
       subMaxLevel: 2,
       loadNavbar: true,
       coverpage: true,
       onlyCover: true,
+      mergeNavbar: true,
+      count:{
+        countable:true,
+        fontsize:'0.9em',
+        color:'rgb(90,90,90)',
+        language:'chinese'
+      },
     }
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <!-- 字数统计 -->
+  <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
+  <!-- 代码复制 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+  <!-- emoji -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
 </body>
 </html>
