@@ -9,6 +9,8 @@
   * [装饰器](Python/装饰器.md)
   * [魔术方法](Python/魔术方法.md)
   * [正则化](Python/正则化.md)
+  * [numpy](Python/numpy.md)
+  * [pandas](Python/pandas.md)
 
 * 手写系列_NLP
   * [Dataset_DataLoader](手写系列_NLP/01dataset_dataloader/dataset_dataloader.md)
