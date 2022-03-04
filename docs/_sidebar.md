@@ -20,6 +20,11 @@
   * [BP神经网络](手写系列_NLP/05BP神经网络/BP神经网络.md)
   * [Linear](手写系列_NLP/06Linear/Linear.md)
 
+* 天池大赛
+  * [新闻文本分类](天池大赛/新闻文本分类.md)
+
+* Kaggle
+
 * 深度学习
   * [Regression](深度学习/01Regression/Regression.md)
 
