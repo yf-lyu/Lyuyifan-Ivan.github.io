@@ -19,7 +19,7 @@
   * [逻辑回归](手写系列_NLP/04逻辑回归/逻辑回归.md)
   * [BP神经网络](手写系列_NLP/05BP神经网络/BP神经网络.md)
   * [Linear](手写系列_NLP/06Linear/Linear.md)
-  * [word2vec](手写系列_NLP/07Word2Vec/Word2Vec.md)
+  * [word2vec](手写系列_NLP/07word2vec/word2vec.md)
 
 * 天池大赛 & Kaggle
   * [新闻文本分类](天池大赛/新闻文本分类.md)
