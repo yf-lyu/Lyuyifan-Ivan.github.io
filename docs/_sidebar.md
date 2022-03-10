@@ -25,8 +25,8 @@
 * 天池大赛 & Kaggle
   * [新闻文本分类](天池大赛/新闻文本分类.md)
 
-* 深度学习
-  * [Regression](深度学习/01Regression/Regression.md)
+<!-- * 深度学习 -->
+  <!-- * [Regression](深度学习/01Regression/Regression.md) -->
 
 * NLP论文汇总
 
