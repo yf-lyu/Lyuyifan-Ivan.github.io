@@ -3,6 +3,8 @@
 
 * Python
   * [面向对象](Python/面向对象.md)
+  * [命名空间和作用域](Python/命名空间和作用域.md)
+  * [错误和异常](Python/错误和异常.md)
   * [迭代器](Python/迭代器.md)
   * [生成器](Python/生成器.md)
   * [匿名函数](Python/匿名函数.md)
