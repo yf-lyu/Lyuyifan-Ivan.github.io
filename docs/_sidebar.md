@@ -24,11 +24,12 @@
   * [word2vec](手写系列_NLP/07word_vec/word_vec.md)
   * [Seq2Seq](手写系列_NLP/08Seq2Seq/Seq2Seq.md)
 
+* 深度学习
+  * [Regression](深度学习/01Regression/Regression.md)
+  * [RNN](深度学习/02RNN/RNN.md)
+
 * 天池大赛 & Kaggle
   * [新闻文本分类](天池大赛/新闻文本分类.md)
-
-<!-- * 深度学习 -->
-  <!-- * [Regression](深度学习/01Regression/Regression.md) -->
 
 * NLP论文汇总
 
