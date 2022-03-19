@@ -81,6 +81,7 @@ def init_hidden_state(batch_size, num_hiddens, device): # 初始化隐藏层状�
 ```
 
 ### RNN模型结构
+输出形状是（时间步数$*$批量大小，词表大小），而隐状态形状保持不变，即（批量大小，隐藏单元数）
 ```python
 class RNN_Model:
   def __init__(self, vocab_size, num_hiddens, batch_size, get_params, init_state, device):
@@ -106,9 +107,7 @@ class RNN_Model:
   def __call__(self, *args):
     return self.forward(*args)
 ```
-输出形状是（时间步数$*$批量大小，词表大小），而隐状态形状保持不变，即（批量大小，隐藏单元数）。
-
-```python
+<!-- ```python
 inputs = torch.arange(10).reshape((2, 5))
 num_hiddens = 512
 batch_size = inputs.shape[0]
@@ -119,4 +118,48 @@ Y, new_state = model(inputs.to(device), init_state)
 print(Y.shape, len(new_state), new_state[0].shape)
 Output:
         torch.Size([10, 28]) 1 torch.Size([2, 512])
+``` -->
+
+
+### 梯度裁剪算法实现
+$$g \Leftarrow min(1,\frac{\theta}{||g||})g$$
+
+$||g||$为梯度范数norm，而在向量梯度g中，通俗的理解，向量范数就是在这个向量空间中向量的大小。通过梯度裁剪，梯度范数永远不会超过$\theta$， 并且更新后的梯度完全与g的原始方向对齐。
+
+L2范数通常会被用来做优化目标函数的正则化项，防止模型为了迎合训练集而过于复杂造成过拟合的情况，从而提高模型的泛化能力。
+
+矩阵A的Frobenius范数定义为矩阵A各项元素的绝对值平方的总和，即
+$$L2=||A||_2=\sqrt[2]{\sum_{i=1}^m \sum_{j=1}^n a_{i,j}^2}, x=(x_1,x_2,...,x_n)$$
+```python
+def grad_clipping(model, theta):
+  if isinstance(model, nn.Module):
+    params = [p for p in nn.parameters() if p.requires_grad]
+  else:
+    params = model.params
+  norm = torch.sqrt(sum(torch.sum((p.grad **2)) for p in params)) # 求解梯度g范数
+  if norm > theta:
+    for params in params:
+      param.grad[:] *= theta / norm
+```
+
+
+### 预测
+首先定义预测函数来生成prefix之后的新字符，其中的prefix是一个用户提供的包含多个字符的字符串。
+- 在循环遍历prefix中的开始字符时，我们不断地将隐状态传递到下一个时间步，但是不生成任何输出。这被称为预热（warm-up）期。
+- 预热期结束后，隐状态的值通常比刚开始的初始值更适合预测，从而预测字符并输出它们。
+
+```python
+def predict(model, prefix, num_pred, vocab, device):  # num_pred 预测步长
+  # 预测prefix之后的新字符
+  state = model.begin_init()
+  output = [prefix[0]]
+  cur_input = lambda: torch.tensor([output[-1]], device=device).reshape((1,1))
+  # 遍历prefix训练model的隐状态state
+  for y in prefix[1:]:        # 预热期
+    _, state = model(cur_input(), state)
+    output.append(vocab[y])
+  for _ in range(num_pred):   # 预测num_pred步
+    y, state = model(cur_input(), state)
+    output.append(int(y.argmax(dim=1).reshape(1)))
+  return ''.join([vocab.idx_to_token(idx) for idx in output])
 ```
