@@ -107,6 +107,28 @@ class RNN_Model:
   def __call__(self, *args):
     return self.forward(*args)
 ```
+调用pytorch的API实现
+```python
+def init_hindden_state(batch_size, num_hiddens):
+    return torch.zeros((1, batch_size, num_hiddens))    # （隐藏层数，批量大小，隐藏单元数）
+class RNN_Model(nn.Module):
+    def __init__(self, vocab_size, num_hiddens):
+        super(RNN_Model, self).__init__()
+        self.vocab_size = vocab_size
+        self.num_hiddens = num_hiddens
+        self.rnn = nn.RNN(vocab_size, num_hiddens)
+        self.num_layer = 1
+        self.linear = nn.Linear(self.num_hiddens, self.vocab_size)
+    def forward(self, x, state):
+        x = F.one_hot(x.t().long(), self.vocab_size)
+        x = x.to(torch.float32)
+        y, state = self.rnn(x, state)
+        output = self.linear(y.reshape((-1, y.shape[-1])))
+        return output, state
+    def hidden_init_state(self, device, batch_size=1):
+        return torch.zeros(size=(self.num_layer*self.rnn.num_layers, batch_size, self.num_hiddens), device=device)
+```
+
 <!-- ```python
 inputs = torch.arange(10).reshape((2, 5))
 num_hiddens = 512
