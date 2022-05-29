@@ -25,8 +25,9 @@
   * [Seq2Seq](手写系列_NLP/08Seq2Seq/Seq2Seq.md)
 
 * 深度学习
-  * [Regression](深度学习/01Regression/Regression.md)
+  * [Self-attention](深度学习/03Self-attention/Self-attention.md)
   * [RNN](深度学习/02RNN/RNN.md)
+  * [Regression](深度学习/01Regression/Regression.md)
 
 * 天池大赛 & Kaggle
   * [新闻文本分类](天池大赛/新闻文本分类.md)
