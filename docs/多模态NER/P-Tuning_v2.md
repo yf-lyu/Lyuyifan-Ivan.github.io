@@ -23,7 +23,7 @@
 
 先前的P-tuning用了一层BiLSTM来表征pseudo token，显然是推理能力不足的原因之一，因此该部分提出Deep Prompt Tuning，替换原来的BiLSTM而使用Prefix-tuning中的深层模型
 
-![P-tuning v2](D:\Paper\论文解读\img\P-tuning v2.jpg)
+![P-tuning v2](./多模态NER/img/P-tuning v2.jpg)
 
 （个人理解）根据bert隐藏层数设计Prompt层数，如hidden_layer为12，Prompt设计为shape: (batch_size, pre_seq_len)，pre_seq_len为设定Prompr长度（自定义长度），**prefix_attention_mask**[shape:(batch_size, pre_seq_len)]与**attention_mask**进行拼接作为bert的attention_mask输入
 
@@ -77,7 +77,7 @@ elif past_key_value is not None:
 
 P-tuning v2在引入Prefix-Tuning基础上，提升小模型上的Prompt Tuning
 
-<img src="D:\Paper\论文解读\img\Prefix-tuning.jpg" alt="Prefix-tuning" style="zoom:80%;" />
+<img src="./多模态NER/img/Prefix-tuning.jpg" alt="Prefix-tuning" style="zoom:80%;" />
 
 Prefix-tuning（前缀微调）最开始应用在NLG任务上，由[Prefix, x, y]三部分构成，如上图所示：Prefix为前缀，x为输入，y为输出。Prefix-tuning将预训练参数固定，Prefix参数进行微调：不仅只在embedding上进行微调，也在TransFormer上的embedding输入每一层进行微调
 
