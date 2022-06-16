@@ -29,6 +29,9 @@
   * [RNN](深度学习/02RNN/RNN.md)
   * [Regression](深度学习/01Regression/Regression.md)
 
+* 多模态NER
+  * [P-Tuning V2](多模态NER/P-Tuning_v2.md)
+
 * 天池大赛 & Kaggle
   * [新闻文本分类](天池大赛/新闻文本分类.md)
 
