@@ -92,7 +92,7 @@ Baseline选择：
 - PT：P-tuning
 - FT：传统的Fine-tuning方法
 
-![ner_实验结果](D:\Paper\论文解读\img\ner_实验结果.jpg)
+![ner_实验结果](./多模态NER/img/ner_实验结果.jpg)
 
 ## 代码实现
 
