@@ -23,7 +23,8 @@
 
 先前的P-tuning用了一层BiLSTM来表征pseudo token，显然是推理能力不足的原因之一，因此该部分提出Deep Prompt Tuning，替换原来的BiLSTM而使用Prefix-tuning中的深层模型
 
-![P-tuning v2](./多模态NER/img/P-tuning v2.jpg)
+<!-- ![P-tuning v2](./多模态NER/img/P-tuning v2.jpg) -->
+<img src="./多模态NER/img/P-tuning v2.jpg" alt="P-tuning v2" style="zoom:80%;" />
 
 （个人理解）根据bert隐藏层数设计Prompt层数，如hidden_layer为12，Prompt设计为shape: (batch_size, pre_seq_len)，pre_seq_len为设定Prompr长度（自定义长度），**prefix_attention_mask**[shape:(batch_size, pre_seq_len)]与**attention_mask**进行拼接作为bert的attention_mask输入
 
@@ -92,7 +93,8 @@ Baseline选择：
 - PT：P-tuning
 - FT：传统的Fine-tuning方法
 
-![ner_实验结果](./多模态NER/img/ner_实验结果.jpg)
+<!-- ![ner_实验结果](./多模态NER/img/ner_实验结果.jpg) -->
+<img src="./多模态NER/img/ner_实验结果.jpg" alt="ner_实验结果" style="zoom:80%;" />
 
 ## 代码实现
 
