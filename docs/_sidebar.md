@@ -17,6 +17,7 @@
   * [Regression](深度学习/01Regression/Regression.md)
 
 * 多模态NER
+  * [相关工作](多模态NER/暑假进度记录.md)
   * [P-Tuning V2](多模态NER/P-Tuning_v2.md)
   * [对比学习](多模态NER/对比学习.md)
 
