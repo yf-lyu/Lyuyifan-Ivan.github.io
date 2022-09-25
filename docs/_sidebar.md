@@ -10,6 +10,7 @@
   * [Linear](手写系列_NLP/06Linear/Linear.md)
   * [word2vec](手写系列_NLP/07word_vec/word_vec.md)
   * [Attention](手写系列_NLP/08Attention/Attention.md)
+  * [transformer_encode](手写系列_NLP/09shouxie_transformer_encode/shouxie_transformer_encode.md)
 
 * 深度学习
   * [Self-attention](深度学习/03Self-attention/Self-attention.md)
