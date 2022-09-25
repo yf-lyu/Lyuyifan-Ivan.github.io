@@ -11,5 +11,5 @@
 - Drink well
 - Be happy every day
 
-[GitHub](https://github.com/lvyifan-Ivan)
+[GitHub](https://github.com/Lyuyifan-Ivan)
 [Get Started](README.md)
