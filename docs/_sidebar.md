@@ -1,6 +1,19 @@
 <!-- _sidebar.md -->
 * [首页](README.md)
 
+* Python
+  * [面向对象](Python/面向对象.md)
+  * [命名空间和作用域](Python/命名空间和作用域.md)
+  * [错误和异常](Python/错误和异常.md)
+  * [迭代器](Python/迭代器.md)
+  * [生成器](Python/生成器.md)
+  * [匿名函数](Python/匿名函数.md)
+  * [装饰器](Python/装饰器.md)
+  * [魔术方法](Python/魔术方法.md)
+  * [正则化](Python/正则化.md)
+  * [numpy](Python/numpy.md)
+  * [pandas](Python/pandas.md)
+
 * 手写系列_NLP
   * [Dataset_DataLoader](手写系列_NLP/01dataset_dataloader/dataset_dataloader.md)
   * [梯度下降](手写系列_NLP/02梯度下降/梯度下降.md)
@@ -35,19 +48,6 @@
   <!-- * [多模态相关论文](NLP论文汇总/多模态相关论文.md) -->
   * [NLP经典论文](NLP论文汇总/nlp经典论文.md)
   * [ABSA](NLP论文汇总/ABSA.md)
-
-* Python
-  * [面向对象](Python/面向对象.md)
-  * [命名空间和作用域](Python/命名空间和作用域.md)
-  * [错误和异常](Python/错误和异常.md)
-  * [迭代器](Python/迭代器.md)
-  * [生成器](Python/生成器.md)
-  * [匿名函数](Python/匿名函数.md)
-  * [装饰器](Python/装饰器.md)
-  * [魔术方法](Python/魔术方法.md)
-  * [正则化](Python/正则化.md)
-  * [numpy](Python/numpy.md)
-  * [pandas](Python/pandas.md)
 
 * 常见问题汇总
   * [矩阵求导](常见问题汇总/矩阵求导.md)
