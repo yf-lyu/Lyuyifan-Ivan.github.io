@@ -12,12 +12,17 @@
 
 在介绍什么是注意力机制之前，先让大家看一张图片。当大家看到下面图片，会首先看到什么内容？当过载信息映入眼帘时，我们的大脑会把注意力放在主要的信息上，这就是大脑的注意力机制。
 
-<div align=center>
-<img src="./深度学习/03Self-attention/images/04062046.jpg"/>
-</div>
+![04062046](images/04062046.jpg)
+
 
 同样，当我们读一句话时，大脑也会首先记住重要的词汇，这样就可以把注意力机制应用到自然语言处理任务中，于是人们就通过借助人脑处理信息过载的方式，提出了Attention机制。
 
 ## 注意力机制模型
 
-<img src="./深度学习/03Self-attention/images/self-attention.jpg" alt="self-attention" style="zoom:50%;" />
+<img src="images/self-attention.jpg" alt="self-attention" style="zoom:50%;" />
+
+QK 相乘求相似度，做一个 scale（未来做 softmax 的时候避免出现极端情况）
+
+然后做 Softmax 得到概率
+
+新的向量表示了K 和 V（K==V），然后这种表示还暗含了 Q 的信息（于 Q 而言，K 里面重要的信息），也就是说，挑出了 K 里面的关键点

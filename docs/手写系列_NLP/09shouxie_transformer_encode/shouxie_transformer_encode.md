@@ -1,16 +1,18 @@
-# 手写Transformer编码器部分源码
+# 手写Transformer编码器
 
 ## 整体框架
 
-<img src="D:\Lyuyifan-Ivan.github.io\docs\手写系列_NLP\09shouxie_transformer_encode\tf-整体框架.jpg" alt="tf-整体框架" style="zoom:50%;" />
+<img src="./09shouxie_transformer_encode/tf-整体框架.jpg" alt="tf-整体框架" style="zoom:50%;" />
 
 ## Encode细节图
 
-<img src="D:\Lyuyifan-Ivan.github.io\docs\手写系列_NLP\09shouxie_transformer_encode\encoder-详细图.png" alt="encoder-详细图" style="zoom: 67%;" />
+<img src="./09shouxie_transformer_encode/encoder-详细图.png" alt="encoder-详细图" style="zoom: 67%;" />
 
 主要包含有自注意力模块、残差网络、归一化、前馈传播模块。其中编码器包括两个子层：Self-Attention、Feed Forward
 
 每一个子层的传输过程中都会有一个（残差网络+归一化）
+
+## 手写源码
 
 ```python
 import math
