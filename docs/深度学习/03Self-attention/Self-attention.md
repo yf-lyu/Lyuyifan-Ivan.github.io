@@ -19,7 +19,7 @@
 
 ## 注意力机制模型
 
-<img src="./深度学习/03Self-attention/images/self-attention.jpg" alt="self-attention" style="zoom:50%;" />
+<img src="image/self-attention.jpg" alt="self-attention" style="zoom:50%;" />
 
 QK 相乘求相似度，做一个 scale（未来做 softmax 的时候避免出现极端情况）
 
