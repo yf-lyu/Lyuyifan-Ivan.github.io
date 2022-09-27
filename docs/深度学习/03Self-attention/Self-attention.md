@@ -19,3 +19,5 @@
 同样，当我们读一句话时，大脑也会首先记住重要的词汇，这样就可以把注意力机制应用到自然语言处理任务中，于是人们就通过借助人脑处理信息过载的方式，提出了Attention机制。
 
 ## 注意力机制模型
+
+<img src="./深度学习/03Self-attention/images/self-attention.jpg" alt="self-attention" style="zoom:50%;" />

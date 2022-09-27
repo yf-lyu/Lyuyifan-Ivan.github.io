@@ -2,11 +2,11 @@
 
 ## 整体框架
 
-<img src="https://imgmd.oss-cn-shanghai.aliyuncs.com/BERT_IMG/tf-%E6%95%B4%E4%BD%93%E6%A1%86%E6%9E%B6.jpg" alt="img" style="zoom: 50%;" />
+<img src="D:\Lyuyifan-Ivan.github.io\docs\手写系列_NLP\09shouxie_transformer_encode\tf-整体框架.jpg" alt="tf-整体框架" style="zoom:50%;" />
 
 ## Encode细节图
 
-<img src="https://imgmd.oss-cn-shanghai.aliyuncs.com/BERT_IMG/encoder-%E8%AF%A6%E7%BB%86%E5%9B%BE.png" alt="img" style="zoom: 50%;" />
+<img src="D:\Lyuyifan-Ivan.github.io\docs\手写系列_NLP\09shouxie_transformer_encode\encoder-详细图.png" alt="encoder-详细图" style="zoom: 67%;" />
 
 主要包含有自注意力模块、残差网络、归一化、前馈传播模块。其中编码器包括两个子层：Self-Attention、Feed Forward
 
