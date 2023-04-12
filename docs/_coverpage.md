@@ -5,7 +5,7 @@
 # HELLO
 <!-- <small>2.0</small> -->
 
-> Ivan个人笔记博客
+> ivan个人笔记博客
 
 - Eat well
 - Drink well
